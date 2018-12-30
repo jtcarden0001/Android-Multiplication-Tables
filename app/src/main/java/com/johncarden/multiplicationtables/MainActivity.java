@@ -57,8 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateDisplay(int[] multiplier){
 
-        ArrayList<Integer> displayList = new ArrayList<>(Arrays.asList(multiplier[0] * 1, multiplier[0] * 2, multiplier[0] * 3, multiplier[0] * 4, multiplier[0] * 5
-                , multiplier[0] * 6, multiplier[0] * 7, multiplier[0] * 8, multiplier[0] * 9, multiplier[0] * 10, multiplier[0] * 11, multiplier[0] * 12));
+        ArrayList<Integer> displayList = new ArrayList<>();
+        for(int i = 1; i < 13; i ++){
+            displayList.add(multiplier[0] * i);
+        }
         ArrayAdapter<Integer> arrayAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_list_item_1, displayList);
         multiplicationList.setAdapter(arrayAdapter);
     }
